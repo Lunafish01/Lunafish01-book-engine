@@ -21,3 +21,37 @@ mutation addUser($username: String!, $email: $String!, $password: $String!) {
         }
     }
 }`;
+
+export const SAVE_BOOK = gpl`
+mutation saveBook($book: SavedBookInput!) {
+    saveBook(book: $book) {
+        username
+        email
+        bookCount
+        savedBooks {
+            authors
+            description
+            bookId
+            image
+            link
+            title
+        }
+    }
+}`;
+
+export const REMOVE_BOOK =gpl`
+mutation removeBook($bookId: String) {
+    removeBook(bookId: $bookId) {
+        username
+        email
+        bookCount
+        savedBooks {
+            authors
+            description
+            bookId
+            image
+            link
+            title
+        }
+    }
+}`;
