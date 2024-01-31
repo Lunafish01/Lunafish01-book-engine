@@ -23,8 +23,8 @@ mutation addUser($username: String!, $email: $String!, $password: $String!) {
 }`;
 
 export const SAVE_BOOK = gpl`
-mutation saveBook($book: SavedBookInput!) {
-    saveBook(book: $book) {
+mutation saveBook($bookData: BookInput!) {
+    saveBook(bookData: $bookData) {
         username
         email
         bookCount
