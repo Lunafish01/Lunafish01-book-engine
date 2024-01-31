@@ -4,10 +4,10 @@ const typeDefs = gpl`
 
 type User{
     _id: ID!
-    username: String
-    email: String
+    username: String!
+    email: String!
     bookCount: Int
-    savedBooks: [Book]!
+    savedBooks: [Book]
 }
 
 type Book {
@@ -22,6 +22,15 @@ type Book {
 type Auth{
     token: ID!
     user: User
+}
+
+input InputBook {
+    bookId: ID!
+    authors: [String]
+    description : String
+    image: String
+    link: String
+    title: String!
 }
 
 type Query {
